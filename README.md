@@ -172,6 +172,8 @@ Check Wazuh manager:
 ```bash
 sudo systemctl status wazuh-manager
 ```
+![Alt text](status.png)
+
 
 Check Wazuh dashboard:
 
