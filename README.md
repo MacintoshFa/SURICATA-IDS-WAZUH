@@ -298,31 +298,14 @@ Verify status:
 ```bash
 sudo systemctl status suricata
 ```
-[Repository Name](https://github.com)
+Please refer to my IDS project to learn how to properly install and setup suricata and create custom rules.
+[Suricata-IDS-IPS-Homelab-Project](https://github.com/MacintoshFa/Suricata-IDS-IPS-Homelab-Project.git)
 
 ---
 
-# Deploy Wazuh Agent on Suricata Sensor
+# Deploy ubuntu Desktop Agent on Wazuh Dashboard
 
-Install Wazuh agent:
 
-```bash
-sudo apt install wazuh-agent -y
-```
-
-Edit agent configuration:
-
-```bash
-sudo nano /var/ossec/etc/ossec.conf
-```
-
-Set Wazuh manager IP:
-
-```xml
-<server>
-  <address>192.168.56.10</address>
-</server>
-```
 
 ---
 
@@ -362,65 +345,8 @@ sudo systemctl status wazuh-agent
 ```
 
 ---
+#
 
-# Register Agent with Wazuh Server
-
-On Wazuh server:
-
-```bash
-sudo /var/ossec/bin/manage_agents
-```
-
-Select:
-
-```text
-A - Add Agent
-```
-
-Provide:
-
-* Agent Name
-* Agent IP
-
-Extract generated key.
-
-On Suricata machine:
-
-```bash
-sudo /var/ossec/bin/manage_agents
-```
-
-Select:
-
-```text
-I - Import Key
-```
-
-Paste generated key.
-
-Restart agent:
-
-```bash
-sudo systemctl restart wazuh-agent
-```
-
----
-
-# Verify Agent in Dashboard
-
-Navigate to:
-
-```text
-Wazuh Dashboard → Agents
-```
-
-Expected result:
-
-```text
-Suricata-Sensor → Active
-```
-
----
 
 # Create Custom Suricata Rules
 
