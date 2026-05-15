@@ -162,8 +162,7 @@ Example:
 Username: admin
 Password: generated_password
 ```
-
-
+![Alt text](dashboard.png)
 ---
 
 # Verify Wazuh Services
