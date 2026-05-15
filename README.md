@@ -22,10 +22,10 @@ The objective of this project is to gain hands-on experience with:
 
 | System         | Role                 | IP Address    |
 | -------------- | -------------------- | ------------- |
-| Ubuntu Server  | Wazuh Server         | 192.168.56.10 |
-| Ubuntu Desktop | Suricata Sensor      | 192.168.56.20 |
+| Ubuntu Server  | Wazuh Server         | 10.0.0.6 |
+| Ubuntu Desktop | Suricata Sensor      | 10.0.0.7|
 | Windows 11     | Wazuh Agent Endpoint | 192.168.56.30 |
-| Kali Linux     | Attacker Machine     | 192.168.56.40 |
+| Kali Linux     | Attacker Machine     | 10.0.0.8 |
 
 Network Type: Bridged Adapter
 
