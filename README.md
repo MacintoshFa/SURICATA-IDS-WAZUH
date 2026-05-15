@@ -241,7 +241,7 @@ Replace `eth0` with the correct interface name.
 Locate:
 
 ```yaml
-HOME_NET: "[192.168.56.0/24]"
+HOME_NET: "[10.0.0.0/24]"
 ```
 
 This tells Suricata to monitor the entire VirtualBox lab network.
