@@ -388,6 +388,7 @@ sudo systemctl enable wazuh-agent
 ---
 
 # Configure Suricata Log Monitoring
+Add the following configuration to the /var/ossec/etc/ossec.conf file of Wazuh agent.
 
 Inside `ossec.conf`, add:
 
@@ -403,6 +404,7 @@ This allows Wazuh to ingest Suricata alerts.
 ---
 
 # Start Wazuh Agent
+
 
 Enable agent:
 
@@ -421,7 +423,7 @@ Verify status:
 ```bash
 sudo systemctl status wazuh-agent
 ```
-
+![image](agent-running.png)
 ---
 #
 
@@ -473,21 +475,23 @@ sudo systemctl restart suricata
 From Kali Linux:
 
 ```bash
-ping 192.168.56.20
+ping 10.0.0.7
 ```
 
 Expected Result:
 
 * Suricata generates ICMP alert
 * Wazuh dashboard displays event
+![image](alert.png)
 
 ---
 
-## Nmap Scan Test
+## Nmap Scan Test on your kali linux attacker machine
 
 ```bash
-nmap -sS 192.168.56.20
+nmap -sS 10.0.0.7
 ```
+![image](deployment2.png)
 
 Expected Result:
 
