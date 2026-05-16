@@ -24,7 +24,6 @@ The objective of this project is to gain hands-on experience with:
 | -------------- | -------------------- | ------------- |
 | Ubuntu Server  | Wazuh Server         | 10.0.0.6 |
 | Ubuntu Desktop | Suricata Sensor      | 10.0.0.7|
-| Windows 11     | Wazuh Agent Endpoint | 192.168.56.30 |
 | Kali Linux     | Attacker Machine     | 10.0.0.8 |
 
 Network Type: Bridged Adapter
@@ -482,7 +481,7 @@ Expected Result:
 
 * Suricata generates ICMP alert
 * Wazuh dashboard displays event
-![image](alert.png)
+![image](logmonitoring.png)
 
 ---
 
@@ -491,7 +490,6 @@ Expected Result:
 ```bash
 nmap -sS 10.0.0.7
 ```
-![image](deployment2.png)
 
 Expected Result:
 
@@ -503,7 +501,7 @@ Expected Result:
 ## SSH Brute Force Test
 
 ```bash
-hydra -l root -P rockyou.txt ssh://192.168.56.30
+hydra -l root -P rockyou.txt ssh://10.0.0.7
 ```
 
 Expected Result:
@@ -553,8 +551,8 @@ Dashboard visibility includes:
 ```json
 {
   "event_type": "alert",
-  "src_ip": "192.168.56.40",
-  "dest_ip": "192.168.56.20",
+  "src_ip": "10.0.0.8",
+  "dest_ip": "10.0.0.7",
   "alert": {
     "signature": "Possible Nmap Scan"
   }
@@ -630,12 +628,12 @@ suricata-wazuh-homelab/
 
 # Resume Project Description
 
-Built a cybersecurity homelab integrating Suricata IDS with Wazuh SIEM using VirtualBox and Ubuntu systems. Configured centralized log collection, network intrusion detection, endpoint monitoring, and alert visualization. Simulated attacks using Kali Linux to validate detection and monitoring capabilities.
+This is a cybersecurity homelab integrating Suricata IDS with Wazuh SIEM using VirtualBox and Ubuntu systems. Configured centralized log collection, network intrusion detection, endpoint monitoring, and alert visualization. Simulated attacks using Kali Linux to validate detection and monitoring capabilities.
 
 ---
 
 # Author
 
-Your Name
+Macintosh Fatal
 
 Cybersecurity Student | SOC Analyst Aspirant | Homelab Enthusiast
