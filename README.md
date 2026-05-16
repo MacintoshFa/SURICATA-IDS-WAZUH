@@ -305,7 +305,85 @@ Please refer to my IDS project to learn how to properly install and setup surica
 
 # Deploy ubuntu Desktop Agent on Wazuh Dashboard
 
+How to Deploy Ubuntu Desktop Agent on Wazuh Dashboard
 
+Deployment Steps
+
+1. Access Wazuh Dashboard
+
+1. Open Wazuh Dashboard in your web browser
+2. Navigate to Endpoints → Deploy new agent
+3. Confirm you're on the "Deploy new agent" tab
+
+
+2. Select Linux Agent Architecture
+Choose the appropriate package for your system:
+
+
+
+|Package Type   |Use Case                                 |
+|---------------|-----------------------------------------|
+|**DEB amd64**  |64-bit Intel/AMD processors (most common)|
+|**DEB aarch64**|ARM-based systems (shown in example)     |
+|RPM amd64      |64-bit RedHat/CentOS systems             |
+|RPM aarch64    |ARM-based RedHat/CentOS systems          |
+
+Example: Select DEB aarch64 for ARM-based Ubuntu systems
+
+
+3. Configure Server Address
+
+Field: Assign a server address
+
+Value: 10.0.0.6 (or your Wazuh Manager IP/FQDN)
+
+Option: Check "Remember server address" to save for future deployments
+
+
+4. Set Agent Name
+
+Field: Assign an agent name
+
+Default: Uses system hostname
+
+Example: ubuntu_Desktop
+
+Note: Agent name must be unique and cannot be changed after enrollment
+
+
+5. Select Agent Groups
+
+Field: Select one or more existing groups
+Example: Default
+Purpose: Organize and manage agent policies
+![image](deployement1.png)
+
+6. Execute Installation Commands
+   
+Copy and run the provided installation commands on your Ubuntu system:
+
+# Commands will be displayed in the dashboard
+
+ Example structure:
+ 
+# curl -s <download_url> | sudo bash
+
+
+![image](deployment2.png)
+
+sudo systemctl start wazuh-agent
+
+
+sudo systemctl enable wazuh-agent
+
+
+7. Verify Agent Enrollment
+
+1. Return to Wazuh Dashboard
+2. Check Agents list for your ubuntu_Desktop agent
+3. Confirm status shows "Active"
+
+​​​​​​​​​
 
 ---
 
